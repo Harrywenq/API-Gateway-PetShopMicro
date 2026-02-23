@@ -78,45 +78,52 @@ spring:
           uri: lb://ORDER-SERVICE
           predicates:
             - Path=/api/orders/**
-🔐 Security
+```
+## 🔐 Security
 
-Gateway xử lý:
+### Gateway xử lý:
 
-Validate JWT trước khi forward
+### Validate JWT trước khi forward
 
-Bỏ qua authentication cho:
+### Bỏ qua authentication cho:
 
-/api/auth/**
+- /api/auth/**
 
-Swagger endpoints
+- Swagger endpoints
 
-Forward token cho các service phía sau
+### Forward token cho các service phía sau
 
-📂 Cấu trúc project
+## 📂 Cấu trúc project
+```
 src/main/java/com/huytpq/api_gateway
 ├── config          # Security / CORS config
 ├── filter          # JWT filter
 ├── route           # Custom route config (nếu có)
 ├── ApiGatewayApplication.java
-▶️ Chạy project
+```
+## ▶️ Chạy project
+```
 mvn clean install
 mvn spring-boot:run
-
+```
 Hoặc:
-
+```
 java -jar target/api-gateway-0.0.1-SNAPSHOT.jar
-🌐 Port mặc định
+```
+## 🌐 Port mặc định
+```
 http://localhost:8080
-📦 Yêu cầu chạy kèm
+```
+## 📦 Yêu cầu chạy kèm
 
-Để hệ thống hoạt động đầy đủ, cần chạy:
+### Để hệ thống hoạt động đầy đủ, cần chạy:
 
-Auth Service
+- Auth Service
 
-User Service
+- User Service
 
-Product Service
+- Product Service
 
-Order Service
+- Order Service
 
-Eureka Server (nếu dùng service discovery)
+- Eureka Server (nếu dùng service discovery)
